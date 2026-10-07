@@ -10,11 +10,11 @@ const parts = [
 </script>
 
 <template>
-  <section id="parts" class="section section-alt">
+  <section id="parts" class="section">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Parts &amp; kits</span>
-        <h2>What goes on a typical job</h2>
+        <h2>What goes on a typical compressor service</h2>
         <p>
           Every line below can go straight onto a quotation, then an invoice and a delivery note, with no retyping.
         </p>
@@ -46,8 +46,8 @@ const parts = [
   background: #fff;
   border-radius: var(--radius);
   padding: 22px 24px;
+  border: 1px solid var(--line);
   border-left: 4px solid var(--accent);
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
 }
 .top {
   display: flex;

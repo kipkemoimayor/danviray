@@ -5,8 +5,8 @@ const scrolled = ref(false)
 
 const links = [
   { href: '#services', label: 'Services' },
-  { href: '#parts', label: 'Parts & Kits' },
-  { href: '#workflow', label: 'How it works' },
+  { href: '#brands', label: 'Brands' },
+  { href: '#about', label: 'About' },
   { href: '#erp', label: 'ERP' },
   { href: '#contact', label: 'Contact' }
 ]
@@ -26,8 +26,8 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   <header class="header" :class="{ scrolled, open }">
     <div class="container bar">
       <a href="#top" class="brand" @click="open = false">
-        <span class="logo">D</span>
-        <span>DanViray<small>Vehicle &amp; Garage Solutions</small></span>
+        <span class="logo"><img src="/logo-mark.png" alt="DanViRay logo" width="32" height="32"></span>
+        <span>DanViray<small>Engineering Excellence &amp; Technical Support</small></span>
       </a>
 
       <nav class="nav" :class="{ show: open }">
@@ -84,12 +84,17 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 .logo {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 9px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-weight: 800;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #fff;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .nav {
   display: flex;

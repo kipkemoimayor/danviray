@@ -6,26 +6,28 @@ const year = new Date().getFullYear()
   <footer class="footer">
     <div class="container row">
       <div class="brand">
-        <span class="logo">D</span>
+        <span class="logo"><img src="/logo-mark.png" alt="DanViRay logo" width="32" height="32"></span>
         <div>
-          <strong>DanViray</strong>
-          <p>Vehicle, garage &amp; compressor solutions.</p>
+          <strong>DanViray Solutions Ltd</strong>
+          <p>Industrial integrity • Quality engineering</p>
         </div>
       </div>
       <address>
-        P.O. Box 78209-00507, Viwandani, Nairobi<br>
-        <a href="tel:0745122530">0745 122 530</a> / <a href="tel:0725692770">0725 692 770</a><br>
+        North Airport Road, next to Autoexpress, Viwandani<br>
+        P.O. Box 78209-00507, Nairobi<br>
+        <a href="tel:+254725692770">+254 725 692 770</a> / <a href="tel:+254105871189">+254 105 871 189</a><br>
         <a href="mailto:danviraylimited@gmail.com">danviraylimited@gmail.com</a>
       </address>
       <nav>
         <a href="#services">Services</a>
-        <a href="#parts">Parts &amp; Kits</a>
+        <a href="#brands">Brands</a>
+        <a href="#about">About</a>
         <a href="#workflow">How it works</a>
         <a href="https://invoicing-erp-frontend.invoicing-erp.workers.dev/" target="_blank" rel="noopener">ERP</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
-    <div class="container copy">© {{ year }} DanViray. All rights reserved.</div>
+    <div class="container copy">© {{ year }} DanViray Solutions Ltd. All rights reserved.</div>
   </footer>
 </template>
 
@@ -59,12 +61,17 @@ const year = new Date().getFullYear()
 .logo {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 9px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-weight: 800;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #fff;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 nav {
   display: flex;

@@ -1,21 +1,20 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 const CONTACT = {
-  phones: ['0745 122 530', '0725 692 770'],
+  phones: ['+254 725 692 770', '+254 105 871 189', '+254 745 122 530'],
   email: 'danviraylimited@gmail.com',
-  address: 'P.O. Box 78209-00507, Viwandani, Nairobi'
+  postal: 'P.O. Box 78209-00507, Nairobi',
+  site: 'North Airport Road, next to Autoexpress, Viwandani Industrial Area'
 }
 
 const form = reactive({ name: '', phone: '', service: '', message: '' })
 const sent = ref(false)
 
 const services = [
-  'Air compressor servicing',
-  'Vehicle maintenance & repair',
-  'Garage equipment & setup',
+  'Compressor maintenance & overhaul',
+  'System troubleshooting & technical support',
+  'Motor repair & coil rewinding',
   'Parts & service kits',
-  'Preventive maintenance contract',
-  'Consulting',
   'Other'
 ]
 
@@ -37,18 +36,19 @@ function submit() {
         <span class="eyebrow">Get in touch</span>
         <h2>Request a quotation</h2>
         <p class="lead">
-          Send us the equipment model or vehicle details and what you need done. We'll reply with an
-          itemised quote, usually within 24 hours.
+          Send us the compressor or motor make, model and what you need done, and we'll reply with an
+          itemised quote.
         </p>
         <dl>
           <div>
-            <dt>Phone</dt>
+            <dt>Hotline</dt>
             <dd class="phones">
               <a v-for="p in CONTACT.phones" :key="p" :href="`tel:${p.replace(/\s/g, '')}`">{{ p }}</a>
             </dd>
           </div>
           <div><dt>Email</dt><dd><a :href="`mailto:${CONTACT.email}`">{{ CONTACT.email }}</a></dd></div>
-          <div><dt>Address</dt><dd>{{ CONTACT.address }}</dd></div>
+          <div><dt>Workshop</dt><dd>{{ CONTACT.site }}</dd></div>
+          <div><dt>Mail</dt><dd>{{ CONTACT.postal }}</dd></div>
         </dl>
       </div>
 
@@ -70,7 +70,7 @@ function submit() {
         </label>
         <label>
           Details
-          <textarea v-model="form.message" rows="4" placeholder="e.g. GA 11 compressor service: maint kit, separator, V belt kit, oil" />
+          <textarea v-model="form.message" rows="4" placeholder="e.g. Atlas Copco GA 11 service, or 45 kW ABB motor rewind" />
         </label>
         <button type="submit" class="btn btn-dark">Send request</button>
         <p v-if="sent" class="ok">Your email app should open with the request ready to send.</p>

@@ -2,33 +2,21 @@
 const services = [
   {
     icon: 'M4 14h16M6 14V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5M7 18a2 2 0 1 0 0-.01M17 18a2 2 0 1 0 0-.01',
-    title: 'Air Compressor Servicing',
-    text: 'Scheduled maintenance for GA-series and other screw compressors — maint kits, separators, belts, oil changes and full overhauls.'
-  },
-  {
-    icon: 'M5 17h14M6 17l1.5-6h9L18 17M8 11l1-4h6l1 4M7 20a1 1 0 1 0 0-.01M17 20a1 1 0 1 0 0-.01',
-    title: 'Vehicle Maintenance & Repair',
-    text: 'Routine service, diagnostics, brakes, suspension and engine work for private cars, commercial vehicles and fleets.'
-  },
-  {
-    icon: 'M3 21V9l9-6 9 6v12M8 21v-7h8v7',
-    title: 'Garage Equipment & Setup',
-    text: 'Supply, installation and upkeep of workshop equipment — lifts, compressors, tools and lubrication systems.'
-  },
-  {
-    icon: 'M20 7 9 18l-5-5',
-    title: 'Genuine Parts & Service Kits',
-    text: 'Sourcing of genuine and OEM-equivalent filters, belts, wear parts and lubricants, delivered to your site.'
+    title: 'Compressor Maintenance & Overhauls',
+    text: 'Complete rotary screw air-end rebuilds, reciprocating valve refurbishments, element alignment and oil circuit decontamination for all configurations.',
+    points: ['Air-end rebuilds', 'Valve refurbishment', 'Element alignment', 'Oil circuit decontamination']
   },
   {
     icon: 'M3 12h4l3-8 4 16 3-8h4',
-    title: 'Preventive Maintenance Contracts',
-    text: 'Planned service schedules with reminders and service history, so breakdowns are caught before they cost you.'
+    title: 'System Troubleshooting & Technical Support',
+    text: 'Advanced pneumatic logic analysis, thermodynamic parameter profiling, electronic controller debugging and immediate field recovery actions.',
+    points: ['Pneumatic logic analysis', 'Thermodynamic profiling', 'Controller debugging', 'Field recovery']
   },
   {
-    icon: 'M12 8v4l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z',
-    title: 'Fleet & Technical Consulting',
-    text: 'Advice on fleet costs, equipment selection and maintenance planning for small and mid-sized operations.'
+    icon: 'M13 2 4 14h7l-1 8 9-12h-7l1-8Z',
+    title: 'Motor Repairs & Coil Rewinding',
+    text: 'Low and medium voltage copper coil rewinding using Class H thermal insulation, vacuum pressure impregnation and surge verification testing.',
+    points: ['LV & MV rewinding', 'Class H insulation', 'Vacuum pressure impregnation', 'Surge testing & balancing']
   }
 ]
 </script>
@@ -37,9 +25,12 @@ const services = [
   <section id="services" class="section">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">What we do</span>
-        <h2>Services for vehicles, garages and workshops</h2>
-        <p>One provider for parts, labour and paperwork — from the first quote to the final receipt.</p>
+        <span class="eyebrow">Core services</span>
+        <h2>Mechanical &amp; electrical engineering services</h2>
+        <p>
+          An independent engineering workshop with calibrated technical tooling for overhauls, rebuilds
+          and electrical insulation rewinds.
+        </p>
       </div>
 
       <div class="grid">
@@ -51,6 +42,9 @@ const services = [
           </div>
           <h3>{{ s.title }}</h3>
           <p>{{ s.text }}</p>
+          <ul>
+            <li v-for="p in s.points" :key="p">{{ p }}</li>
+          </ul>
         </article>
       </div>
     </div>
@@ -64,7 +58,9 @@ const services = [
   gap: 22px;
 }
 .card {
-  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #fff;
@@ -86,22 +82,43 @@ const services = [
   margin-bottom: 18px;
 }
 h3 {
-  font-size: 1.12rem;
+  font-size: 1.15rem;
   font-weight: 700;
 }
 p {
-  margin-top: 8px;
+  margin-top: 10px;
   color: var(--ink-soft);
   font-size: 0.95rem;
 }
+ul {
+  list-style: none;
+  padding: 18px 0 0;
+  margin: 18px 0 0;
+  border-top: 1px dashed var(--line);
+  display: grid;
+  gap: 8px;
+}
+li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--accent);
+}
 @media (max-width: 960px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 620px) {
-  .grid {
     grid-template-columns: 1fr;
+    max-width: 640px;
+    margin: 0 auto;
   }
 }
 </style>

@@ -14,14 +14,15 @@ const lines = [
     <div class="glow" />
     <div class="container grid">
       <div class="copy">
-        <span class="pill">Vehicle · Garage · Compressor services</span>
+        <span class="pill">Engineering excellence &amp; technical support</span>
         <h1>
-          Keep your fleet and workshop
-          <span class="hl">running without the paperwork.</span>
+          Compressor overhauls and motor rewinding,
+          <span class="hl">engineered to keep you running.</span>
         </h1>
         <p class="lead">
-          We supply parts, service kits and on-site labour for vehicles, garages and compressors —
-          and manage quotations, invoices, deliveries and payments in one secure workflow.
+          Factory-grade compressor diagnostics, air-end rebuilds and Class H coil rewinding from
+          Viwandani Industrial Area, Nairobi — with quotations, invoices, deliveries and payments
+          managed in one secure workflow.
         </p>
         <div class="cta">
           <a href="#contact" class="btn btn-primary">Request a quotation</a>
@@ -33,9 +34,9 @@ const lines = [
           >Open the ERP →</a>
         </div>
         <ul class="stats">
-          <li><strong>24h</strong><span>quote turnaround</span></li>
-          <li><strong>1</strong><span>workflow, end to end</span></li>
-          <li><strong>100%</strong><span>traceable payments</span></li>
+          <li><strong>7</strong><span>compressor brands</span></li>
+          <li><strong>6</strong><span>motor brands</span></li>
+          <li><strong>Class H</strong><span>insulation rewinds</span></li>
         </ul>
       </div>
 
