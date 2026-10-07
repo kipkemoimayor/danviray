@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { reactive, ref } from 'vue'
 const CONTACT = {
   phones: ['0745 122 530', '0725 692 770'],
   email: 'danviraylimited@gmail.com',
